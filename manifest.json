@@ -2,12 +2,22 @@
   "manifest_version": 2,
   "name": "paste.chat",
   "version": "0.0.1",
+  "permissions": ["contextMenus", "tabs"],
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
+      "run_at": "document_start",
+      "all_frames": true,
       "js": ["content.js"]
     }
-  ]
+  ],
+  "background": {
+    "scripts": ["context.js"]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }
 }

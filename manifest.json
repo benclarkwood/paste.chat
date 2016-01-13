@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "paste.chat",
   "version": "0.0.1",
-  "permissions": ["contextMenus", "tabs"],
+  "permissions": ["contextMenus", "tabs", "storage"],
   "content_scripts": [
     {
       "matches": [

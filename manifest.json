@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "paste.chat",
   "version": "0.0.1",
-  "permissions": ["contextMenus", "tabs", "storage"],
+  "permissions": ["http://*/", "contextMenus", "tabs", "storage"],
   "content_scripts": [
     {
       "matches": [
@@ -14,7 +14,7 @@
     }
   ],
   "background": {
-    "scripts": ["context.js"]
+    "scripts": ["jquery-2.2.0.min.js", "context.js"]
   },
   "options_ui": {
     "page": "options.html",

@@ -1,7 +1,7 @@
 function saveToken() {
   var token = document.getElementById('token').value;
-  console.log("OH GOD KILL ME"); 
-  chrome.storage.sync.set({ tokenValue: token }, function() {
+  var webhook = document.getElementById('webhook').value;
+  chrome.storage.sync.set({ tokenValue: token, webhookValue: webhook}, function() {
     var status = document.getElementById('status');
     status.textContent = 'Options saved.';
     setTimeout(function() {
@@ -12,9 +12,11 @@ function saveToken() {
 
 function restoreOptions() {
   chrome.storage.sync.get({
-    tokenValue: "Slack Token"
+    tokenValue: "Input Slack Token",
+    webhookValue: "Input webhook value"
   }, function(items) {
     document.getElementById('token').value = items.tokenValue;
+    document.getElementById('webhook').value = items.webhookValue;
   });
 }
 
